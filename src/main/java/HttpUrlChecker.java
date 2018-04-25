@@ -25,5 +25,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class HttpUrlChecker {
-
+    final static Pattern PATTERN = Pattern.compile("^https?://[^\\W](.?\\w)*.(at|com)$");
+    
+    static Matcher getMatcher(String url){
+        return PATTERN.matcher(url);
+    }
 }
